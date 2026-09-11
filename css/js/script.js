@@ -1,519 +1,322 @@
-/* =========================================
-   UNIDOS POR LA PATERNA
-   JAVASCRIPT
-========================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    /* =========================================
-       MENÚ MÓVIL
-    ========================================= */
-
-    const menuBtn = document.querySelector(".menu-btn");
-    const nav = document.querySelector(".nav");
-
-    if (menuBtn && nav) {
-
-        menuBtn.addEventListener("click", function () {
-            nav.classList.toggle("activo");
-        });
-
-        const enlaces = nav.querySelectorAll("a");
-
-        enlaces.forEach(function (enlace) {
-
-            enlace.addEventListener("click", function () {
-                nav.classList.remove("activo");
-            });
-
-        });
-    }
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
 
-    /* =========================================
-       CARRUSEL DE FONDO
-    ========================================= */
+        /* =========================
+           MENÚ MÓVIL
+        ========================== */
 
-    const fondo1 = document.querySelector(".hero-fondo-1");
-    const fondo2 = document.querySelector(".hero-fondo-2");
+        const menuBtn =
+            document.querySelector(".menu-btn");
 
-    const indicadores = document.querySelectorAll(".indicador");
-
-
-    /* =========================================
-       IMÁGENES DEL CARRUSEL
-       
-       IMPORTANTE:
-       Estas imágenes están directamente
-       dentro de la carpeta UNIDOS.
-    ========================================= */
-
-    const imagenes = [
-        "fondo.jpg",
-        "fondo2.jpg",
-        "fondo3.jpg",
-        "fondo4.jpeg",
-        "fondo5.jpeg"
-    ];
+        const nav =
+            document.querySelector(".nav");
 
 
-    let indiceActual = 0;
+        if (menuBtn && nav) {
 
-    let fondoVisible = 1;
+            menuBtn.addEventListener(
+                "click",
+                function () {
 
-    let intervalo;
+                    nav.classList.toggle(
+                        "activo"
+                    );
 
-
-    /* =========================================
-       COMPROBAR Y CARGAR IMÁGENES
-    ========================================= */
-
-    imagenes.forEach(function (ruta) {
-
-        const imagen = new Image();
-
-        imagen.src = ruta;
-
-        imagen.onload = function () {
-            console.log("Imagen cargada correctamente:", ruta);
-        };
-
-        imagen.onerror = function () {
-            console.error("No se pudo cargar la imagen:", ruta);
-        };
-
-    });
+                }
+            );
 
 
-    /* =========================================
-       MOSTRAR PRIMERA IMAGEN
-    ========================================= */
+            nav.querySelectorAll("a").forEach(
+                function (enlace) {
 
-    if (fondo1) {
+                    enlace.addEventListener(
+                        "click",
+                        function () {
 
-        fondo1.style.backgroundImage =
-            `url("${imagenes[0]}")`;
+                            nav.classList.remove(
+                                "activo"
+                            );
 
-        fondo1.style.opacity = "1";
+                        }
+                    );
 
-    }
+                }
+            );
 
-
-    if (fondo2) {
-
-        fondo2.style.backgroundImage =
-            `url("${imagenes[1]}")`;
-
-        fondo2.style.opacity = "0";
-
-    }
+        }
 
 
-    /* =========================================
-       ACTUALIZAR INDICADORES
-    ========================================= */
 
-    function actualizarIndicadores() {
+        /* =========================
+           CARRUSEL
+        ========================== */
 
-        indicadores.forEach(function (boton, indice) {
+        const slides =
+            document.querySelectorAll(
+                ".hero-slide"
+            );
 
-            if (indice === indiceActual) {
+        const botones =
+            document.querySelectorAll(
+                ".slider-btn"
+            );
 
-                boton.classList.add("activo");
 
-            } else {
+        let slideActual = 0;
 
-                boton.classList.remove("activo");
+        let intervalo;
+
+
+        function mostrarSlide(indice) {
+
+            if (slides.length === 0) {
+                return;
+            }
+
+
+            slides.forEach(
+                function (slide) {
+
+                    slide.classList.remove(
+                        "activo"
+                    );
+
+                }
+            );
+
+
+            botones.forEach(
+                function (boton) {
+
+                    boton.classList.remove(
+                        "activo"
+                    );
+
+                }
+            );
+
+
+            slides[indice].classList.add(
+                "activo"
+            );
+
+
+            if (botones[indice]) {
+
+                botones[indice].classList.add(
+                    "activo"
+                );
 
             }
 
-        });
 
-    }
-
-
-    /* =========================================
-       CAMBIAR IMAGEN
-    ========================================= */
-
-    function cambiarImagen(nuevoIndice) {
-
-        if (nuevoIndice < 0) {
-            nuevoIndice = imagenes.length - 1;
-        }
-
-        if (nuevoIndice >= imagenes.length) {
-            nuevoIndice = 0;
-        }
-
-
-        /* No hacer nada si es la misma imagen */
-
-        if (nuevoIndice === indiceActual) {
-            return;
-        }
-
-
-        /* =====================================
-           SI EL FONDO 1 ESTÁ VISIBLE
-        ===================================== */
-
-        if (fondoVisible === 1) {
-
-            fondo2.style.backgroundImage =
-                `url("${imagenes[nuevoIndice]}")`;
-
-            fondo2.style.opacity = "1";
-
-            fondo1.style.opacity = "0";
-
-            fondoVisible = 2;
+            slideActual = indice;
 
         }
 
 
-        /* =====================================
-           SI EL FONDO 2 ESTÁ VISIBLE
-        ===================================== */
-
-        else {
-
-            fondo1.style.backgroundImage =
-                `url("${imagenes[nuevoIndice]}")`;
-
-            fondo1.style.opacity = "1";
-
-            fondo2.style.opacity = "0";
-
-            fondoVisible = 1;
-
-        }
-
-
-        /* Guardar imagen actual */
-
-        indiceActual = nuevoIndice;
-
-
-        /* Actualizar los puntos */
-
-        actualizarIndicadores();
-
-    }
-
-
-    /* =========================================
-       BOTONES / PUNTOS DEL CARRUSEL
-    ========================================= */
-
-    indicadores.forEach(function (boton) {
-
-        boton.addEventListener("click", function () {
-
-            const nuevoIndice =
-                parseInt(
-                    boton.getAttribute("data-indice")
-                );
-
-            cambiarImagen(nuevoIndice);
-
-            reiniciarCarrusel();
-
-        });
-
-    });
-
-
-    /* =========================================
-       CARRUSEL AUTOMÁTICO
-    ========================================= */
-
-    function iniciarCarrusel() {
-
-        intervalo = setInterval(function () {
+        function siguienteSlide() {
 
             let siguiente =
-                indiceActual + 1;
+                slideActual + 1;
 
 
-            if (siguiente >= imagenes.length) {
+            if (
+                siguiente >= slides.length
+            ) {
 
                 siguiente = 0;
 
             }
 
 
-            cambiarImagen(siguiente);
+            mostrarSlide(siguiente);
 
-        }, 5000);
-
-    }
+        }
 
 
-    /* =========================================
-       REINICIAR CARRUSEL
-    ========================================= */
+        function iniciarCarrusel() {
 
-    function reiniciarCarrusel() {
+            intervalo =
+                setInterval(
+                    siguienteSlide,
+                    5000
+                );
 
-        clearInterval(intervalo);
+        }
+
+
+        function reiniciarCarrusel() {
+
+            clearInterval(intervalo);
+
+            iniciarCarrusel();
+
+        }
+
+
+        botones.forEach(
+            function (boton, indice) {
+
+                boton.addEventListener(
+                    "click",
+                    function () {
+
+                        mostrarSlide(indice);
+
+                        reiniciarCarrusel();
+
+                    }
+                );
+
+            }
+        );
+
+
+        mostrarSlide(0);
 
         iniciarCarrusel();
 
-    }
 
 
-    /* =========================================
-       INICIAR CARRUSEL
-    ========================================= */
+        /* =========================
+           GALERÍA
+        ========================== */
 
-    iniciarCarrusel();
+        window.abrirImagen =
+            function (ruta) {
 
+                const visor =
+                    document.getElementById(
+                        "visor"
+                    );
 
-    /* =========================================
-       MODAL DE PROYECTOS
-    ========================================= */
+                const imagen =
+                    document.getElementById(
+                        "imagenGrande"
+                    );
 
-    window.mostrarProyecto = function (tipo) {
 
-        const modal =
-            document.getElementById("modalProyecto");
+                if (!visor || !imagen) {
+                    return;
+                }
 
-        const titulo =
-            document.getElementById("modalTitulo");
 
-        const texto =
-            document.getElementById("modalTexto");
+                imagen.src = ruta;
 
-
-        if (!modal || !titulo || !texto) {
-            return;
-        }
-
-
-        const proyectos = {
-
-            calles: {
-                titulo: "Mejoramiento de calles",
-                texto:
-                    "Apoyamos iniciativas destinadas a reparar y mejorar las calles de nuestra comunidad, buscando contribuir a mejores condiciones para las familias de La Paterna."
-            },
-
-            capilla: {
-                titulo: "Apoyo a la capilla",
-                texto:
-                    "Colaboramos con diferentes necesidades y mejoras de nuestra capilla, manteniendo vivo un espacio importante para la comunidad."
-            },
-
-            escuela: {
-                titulo: "Apoyo a la escuela",
-                texto:
-                    "Buscamos contribuir a proyectos que permitan mejorar las condiciones de los estudiantes y apoyar las necesidades de nuestra escuela."
-            },
-
-            campo: {
-                titulo: "Mejoramiento del campo",
-                texto:
-                    "Apoyamos iniciativas para mejorar los espacios deportivos y fomentar la convivencia entre los habitantes de nuestra comunidad."
-            }
-
-        };
-
-
-        const proyecto =
-            proyectos[tipo];
-
-
-        if (proyecto) {
-
-            titulo.textContent =
-                proyecto.titulo;
-
-            texto.textContent =
-                proyecto.texto;
-
-            modal.classList.add("activo");
-
-        }
-
-    };
-
-
-    /* =========================================
-       CERRAR MODAL
-    ========================================= */
-
-    window.cerrarModal = function () {
-
-        const modal =
-            document.getElementById("modalProyecto");
-
-        if (modal) {
-            modal.classList.remove("activo");
-        }
-
-    };
-
-
-    /* =========================================
-       VISOR DE IMÁGENES
-    ========================================= */
-
-    window.abrirImagen = function (ruta) {
-
-        const visor =
-            document.getElementById("visorImagen");
-
-        const imagen =
-            document.getElementById("imagenGrande");
-
-
-        if (!visor || !imagen) {
-            return;
-        }
-
-
-        imagen.src = ruta;
-
-        visor.classList.add("activo");
-
-    };
-
-
-    /* =========================================
-       CERRAR VISOR
-    ========================================= */
-
-    window.cerrarImagen = function () {
-
-        const visor =
-            document.getElementById("visorImagen");
-
-        const imagen =
-            document.getElementById("imagenGrande");
-
-
-        if (visor) {
-            visor.classList.remove("activo");
-        }
-
-
-        if (imagen) {
-            imagen.src = "";
-        }
-
-    };
-
-
-    /* =========================================
-       FORMULARIO
-    ========================================= */
-
-    const formulario =
-        document.getElementById("formulario");
-
-
-    if (formulario) {
-
-        formulario.addEventListener(
-            "submit",
-            function (evento) {
-
-                evento.preventDefault();
-
-
-                const nombre =
-                    document.getElementById("nombre").value;
-
-
-                alert(
-                    "Gracias, " +
-                    nombre +
-                    ". Tu mensaje ha sido recibido."
+                visor.classList.add(
+                    "activo"
                 );
 
-
-                formulario.reset();
-
-            }
-        );
-
-    }
+            };
 
 
-    /* =========================================
-       AÑO DEL FOOTER
-    ========================================= */
+        window.cerrarImagen =
+            function () {
 
-    const año =
-        document.getElementById("año");
+                const visor =
+                    document.getElementById(
+                        "visor"
+                    );
 
-
-    if (año) {
-
-        año.textContent =
-            new Date().getFullYear();
-
-    }
+                const imagen =
+                    document.getElementById(
+                        "imagenGrande"
+                    );
 
 
-    /* =========================================
-       CERRAR CON ESC
-    ========================================= */
+                if (visor) {
 
-    document.addEventListener(
-        "keydown",
-        function (evento) {
-
-            if (evento.key === "Escape") {
-
-                cerrarModal();
-
-                cerrarImagen();
-
-            }
-
-        }
-    );
-
-
-    /* =========================================
-       CERRAR MODAL AL HACER CLIC AFUERA
-    ========================================= */
-
-    const modal =
-        document.getElementById("modalProyecto");
-
-
-    if (modal) {
-
-        modal.addEventListener(
-            "click",
-            function (evento) {
-
-                if (evento.target === modal) {
-
-                    cerrarModal();
+                    visor.classList.remove(
+                        "activo"
+                    );
 
                 }
 
-            }
-        );
 
-    }
+                if (imagen) {
+
+                    imagen.src = "";
+
+                }
+
+            };
 
 
-    const visor =
-        document.getElementById("visorImagen");
+
+        /* =========================
+           FORMULARIO
+        ========================== */
+
+        const formulario =
+            document.getElementById(
+                "formulario"
+            );
 
 
-    if (visor) {
+        if (formulario) {
 
-        visor.addEventListener(
-            "click",
+            formulario.addEventListener(
+                "submit",
+                function (evento) {
+
+                    evento.preventDefault();
+
+
+                    const nombre =
+                        document.getElementById(
+                            "nombre"
+                        ).value;
+
+
+                    alert(
+                        "Gracias, " +
+                        nombre +
+                        ". Tu mensaje ha sido recibido."
+                    );
+
+
+                    formulario.reset();
+
+                }
+            );
+
+        }
+
+
+
+        /* =========================
+           AÑO
+        ========================== */
+
+        const año =
+            document.getElementById(
+                "año"
+            );
+
+
+        if (año) {
+
+            año.textContent =
+                new Date().getFullYear();
+
+        }
+
+
+
+        /* =========================
+           ESC PARA CERRAR GALERÍA
+        ========================== */
+
+        document.addEventListener(
+            "keydown",
             function (evento) {
 
-                if (evento.target === visor) {
+                if (
+                    evento.key === "Escape"
+                ) {
 
                     cerrarImagen();
 
@@ -522,6 +325,37 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         );
 
-    }
 
-});
+
+        /* =========================
+           CERRAR GALERÍA
+           AL HACER CLIC AFUERA
+        ========================== */
+
+        const visor =
+            document.getElementById(
+                "visor"
+            );
+
+
+        if (visor) {
+
+            visor.addEventListener(
+                "click",
+                function (evento) {
+
+                    if (
+                        evento.target === visor
+                    ) {
+
+                        cerrarImagen();
+
+                    }
+
+                }
+            );
+
+        }
+
+    }
+);

@@ -2,24 +2,19 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Unidos por La Paterna</title>
 
     <link rel="stylesheet" href="css/estilos.css">
-
 </head>
-
 
 <body>
 
-
-    <!-- =========================================
-         HEADER
-    ========================================== -->
+    <!-- =========================
+         ENCABEZADO
+    ========================== -->
 
     <header class="header">
 
@@ -28,11 +23,10 @@
             <a href="#inicio" class="logo">
 
                 <img
-                    src="logo.png"
+                    src="img/logo.png"
                     alt="Logo Unidos por La Paterna">
 
             </a>
-
 
             <button
                 class="menu-btn"
@@ -42,32 +36,19 @@
 
             </button>
 
-
             <nav class="nav">
 
-                <a href="#inicio">
-                    Inicio
-                </a>
+                <a href="#inicio">Inicio</a>
 
-                <a href="#quienes-somos">
-                    Quiénes somos
-                </a>
+                <a href="#quienes">Quiénes somos</a>
 
-                <a href="#proyectos">
-                    Proyectos
-                </a>
+                <a href="#proyectos">Proyectos</a>
 
-                <a href="#actividades">
-                    Actividades
-                </a>
+                <a href="#actividades">Actividades</a>
 
-                <a href="#galeria">
-                    Galería
-                </a>
+                <a href="#galeria">Galería</a>
 
-                <a href="#contacto">
-                    Contacto
-                </a>
+                <a href="#contacto">Contacto</a>
 
             </nav>
 
@@ -76,228 +57,235 @@
     </header>
 
 
+    <!-- =========================
+         INICIO / CARRUSEL
+    ========================== -->
 
-    <!-- =========================================
-         INICIO
-    ========================================== -->
+    <section class="hero" id="inicio">
 
-    <section
-        class="hero"
-        id="inicio">
+        <div class="hero-slides">
 
+            <div
+                class="hero-slide activo"
+                style="background-image: url('fondo.jpg');">
+            </div>
 
-        <!-- =====================================
-             CARRUSEL DE FONDO
-        ====================================== -->
+            <div
+                class="hero-slide"
+                style="background-image: url('fondo2.jpg');">
+            </div>
 
-        <div class="carrusel-fondo">
+            <div
+                class="hero-slide"
+                style="background-image: url('fondo3.jpg');">
+            </div>
 
-            <img
-                src="fondo.jpg"
-                alt="La Paterna">
+            <div
+                class="hero-slide"
+                style="background-image: url('fondo4.jpeg');">
+            </div>
 
-            <img
-                src="fondo2.jpg"
-                alt="La Paterna">
-
-            <img
-                src="fondo3.jpg"
-                alt="La Paterna">
-
-            <img
-                src="fondo4.jpeg"
-                alt="La Paterna">
-
-            <img
-                src="fondo5.jpeg"
-                alt="La Paterna">
+            <div
+                class="hero-slide"
+                style="background-image: url('fondo5.jpeg');">
+            </div>
 
         </div>
 
 
-        <!-- =====================================
-             CONTENIDO
-        ====================================== -->
+        <div class="hero-overlay"></div>
+
 
         <div class="contenedor hero-contenido">
 
-
-            <div class="etiqueta">
-
+            <span class="hero-etiqueta">
                 🤝 Unidos por nuestra comunidad
-
-            </div>
-
+            </span>
 
             <h1>
-
                 Unidos por
-
                 <br>
-
-                <span>
-                    La Paterna
-                </span>
-
+                <span>La Paterna</span>
             </h1>
 
-
-            <h2>
-
+            <p class="hero-subtitulo">
                 Nuestra gente. Nuestra tierra.
                 Nuestro compromiso.
+            </p>
 
-            </h2>
-
-
-            <p>
+            <p class="hero-texto">
 
                 Somos un grupo de paterneños radicados
-                en Estados Unidos que continúa apoyando
-                a nuestra comunidad mediante proyectos,
-                actividades y ayuda a las familias que
-                más lo necesitan.
+                en Estados Unidos que mantiene vivo el
+                compromiso con nuestra comunidad,
+                apoyando proyectos, actividades y a
+                las familias que más lo necesitan.
 
             </p>
 
-
             <div class="hero-botones">
-
 
                 <a
                     href="#proyectos"
-                    class="btn btn-principal">
+                    class="btn btn-verde">
 
                     Conoce nuestros proyectos
 
                 </a>
 
-
                 <a
-                    href="#contacto"
-                    class="btn btn-secundario">
+                    href="#quienes"
+                    class="btn btn-blanco">
 
-                    Contáctanos
+                    Conócenos
 
                 </a>
 
-
             </div>
 
         </div>
 
 
-
-        <!-- =====================================
-             INDICADORES
-        ====================================== -->
-
-        <div class="indicadores">
+        <div class="slider-controles">
 
             <button
-                class="indicador indicador-1 activo"
-                aria-label="Imagen 1">
+                class="slider-btn activo"
+                data-slide="0">
             </button>
 
             <button
-                class="indicador indicador-2"
-                aria-label="Imagen 2">
+                class="slider-btn"
+                data-slide="1">
             </button>
 
             <button
-                class="indicador indicador-3"
-                aria-label="Imagen 3">
+                class="slider-btn"
+                data-slide="2">
             </button>
 
             <button
-                class="indicador indicador-4"
-                aria-label="Imagen 4">
+                class="slider-btn"
+                data-slide="3">
             </button>
 
             <button
-                class="indicador indicador-5"
-                aria-label="Imagen 5">
+                class="slider-btn"
+                data-slide="4">
             </button>
-
-        </div>
-
-
-        <div class="hero-descubre">
-
-            <span>
-                Descubre nuestra historia
-            </span>
-
-            <strong>
-                ↓
-            </strong>
 
         </div>
 
     </section>
 
 
+    <!-- =========================
+         DATOS
+    ========================== -->
 
-    <!-- =========================================
-         HISTORIA
-    ========================================== -->
+    <section class="datos">
 
-    <section class="historia seccion">
+        <div class="contenedor datos-grid">
 
-        <div class="contenedor historia-contenido">
+            <div class="dato">
 
+                <span class="dato-icono">🤝</span>
 
-            <div class="titulo-seccion">
+                <strong>Comunidad</strong>
 
-                <span class="mini-titulo">
-                    NUESTRA HISTORIA
-                </span>
-
-                <h2>
-                    Unidos aunque estemos lejos
-                </h2>
+                <p>Unidos por nuestra tierra</p>
 
             </div>
 
 
-            <p>
+            <div class="dato">
 
-                La distancia no nos impide seguir unidos
-                a nuestras raíces. Desde Estados Unidos,
-                un grupo de paterneños mantiene vivo el
-                compromiso con La Paterna y con las personas
-                que forman parte de nuestra comunidad.
+                <span class="dato-icono">🏗️</span>
 
-            </p>
+                <strong>Proyectos</strong>
+
+                <p>Para mejorar La Paterna</p>
+
+            </div>
 
 
-            <p>
+            <div class="dato">
 
-                A través de proyectos, actividades y
-                diferentes formas de apoyo, trabajamos
-                juntos para contribuir al desarrollo y
-                bienestar de nuestra tierra.
+                <span class="dato-icono">❤️</span>
 
-            </p>
+                <strong>Solidaridad</strong>
+
+                <p>Apoyo para nuestra gente</p>
+
+            </div>
+
+
+            <div class="dato">
+
+                <span class="dato-icono">🇺🇸</span>
+
+                <strong>Unidos desde lejos</strong>
+
+                <p>Paterneños en Estados Unidos</p>
+
+            </div>
 
         </div>
 
     </section>
 
 
-
-    <!-- =========================================
+    <!-- =========================
          QUIÉNES SOMOS
-    ========================================== -->
+    ========================== -->
 
     <section
-        class="quienes-somos seccion"
-        id="quienes-somos">
+        class="seccion quienes"
+        id="quienes">
 
         <div class="contenedor dos-columnas">
 
+            <div class="texto">
 
-            <div class="imagen-seccion">
+                <span class="etiqueta-seccion">
+                    QUIÉNES SOMOS
+                </span>
+
+                <h2>
+                    Unidos aunque
+                    <span>estemos lejos</span>
+                </h2>
+
+                <p>
+
+                    Unidos por La Paterna nace del deseo
+                    de mantener viva la unión entre los
+                    paterneños que viven fuera de nuestra
+                    comunidad y las personas que continúan
+                    formando parte de ella.
+
+                </p>
+
+                <p>
+
+                    Desde Estados Unidos seguimos buscando
+                    maneras de contribuir al bienestar,
+                    desarrollo y convivencia de nuestra
+                    comunidad.
+
+                </p>
+
+                <a
+                    href="#proyectos"
+                    class="link-verde">
+
+                    Conoce nuestro trabajo →
+
+                </a>
+
+            </div>
+
+
+            <div class="imagen-grande">
 
                 <img
                     src="fondo.jpg"
@@ -305,254 +293,176 @@
 
             </div>
 
-
-            <div class="texto-seccion">
-
-                <span class="mini-titulo">
-                    QUIÉNES SOMOS
-                </span>
-
-
-                <h2>
-                    Una comunidad que permanece unida
-                </h2>
-
-
-                <p>
-
-                    Unidos por La Paterna es un grupo de
-                    personas originarias de nuestra comunidad
-                    que actualmente viven en Estados Unidos,
-                    pero que mantienen un fuerte vínculo con
-                    su tierra.
-
-                </p>
-
-
-                <p>
-
-                    Nuestro propósito es colaborar con
-                    La Paterna mediante diferentes proyectos,
-                    actividades y acciones solidarias que
-                    beneficien a nuestra comunidad.
-
-                </p>
-
-
-                <div class="valores">
-
-
-                    <div class="valor">
-
-                        <div class="valor-icono">
-                            ❤️
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Solidaridad
-                            </h3>
-
-                            <p>
-                                Apoyamos a quienes más lo necesitan.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="valor">
-
-                        <div class="valor-icono">
-                            🌱
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Desarrollo
-                            </h3>
-
-                            <p>
-                                Trabajamos por mejorar nuestra comunidad.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="valor">
-
-                        <div class="valor-icono">
-                            🤝
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                Compromiso
-                            </h3>
-
-                            <p>
-                                Seguimos unidos a nuestras raíces.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
         </div>
 
     </section>
 
 
-
-    <!-- =========================================
+    <!-- =========================
          PROYECTOS
-    ========================================== -->
+    ========================== -->
 
     <section
-        class="proyectos seccion"
+        class="seccion proyectos"
         id="proyectos">
 
         <div class="contenedor">
 
+            <div class="encabezado-seccion">
 
-            <div class="titulo-seccion centrado">
-
-                <span class="mini-titulo">
+                <span class="etiqueta-seccion">
                     NUESTROS PROYECTOS
                 </span>
 
                 <h2>
-                    Trabajamos por La Paterna
+                    Trabajamos por
+                    <span>La Paterna</span>
                 </h2>
 
                 <p>
-                    Cada proyecto nace del deseo de contribuir
-                    al bienestar y desarrollo de nuestra comunidad.
+
+                    Nuestro compromiso se transforma
+                    en acciones que buscan beneficiar
+                    a nuestra comunidad.
+
                 </p>
 
             </div>
 
 
-            <div class="tarjetas">
+            <div class="proyectos-grid">
 
 
-                <article class="tarjeta">
+                <article class="proyecto-card">
 
-                    <div class="tarjeta-icono">
-                        🛣️
+                    <div class="proyecto-imagen">
+
+                        <img
+                            src="fondo2.jpg"
+                            alt="Mejoramiento de calles">
+
                     </div>
 
-                    <h3>
-                        Mejoramiento de calles
-                    </h3>
+                    <div class="proyecto-contenido">
 
-                    <p>
-                        Apoyamos iniciativas para reparar y
-                        mejorar las calles de nuestra comunidad.
-                    </p>
+                        <span class="proyecto-numero">
+                            01
+                        </span>
 
-                    <button
-                        class="btn-link"
-                        onclick="mostrarProyecto('calles')">
+                        <h3>
+                            Mejoramiento de calles
+                        </h3>
 
-                        Ver proyecto →
+                        <p>
 
-                    </button>
+                            Apoyamos iniciativas destinadas
+                            a reparar y mejorar las calles
+                            de nuestra comunidad.
+
+                        </p>
+
+                    </div>
 
                 </article>
 
 
+                <article class="proyecto-card">
 
-                <article class="tarjeta">
+                    <div class="proyecto-imagen">
 
-                    <div class="tarjeta-icono">
-                        ⛪
+                        <img
+                            src="fondo3.jpg"
+                            alt="Apoyo a la capilla">
+
                     </div>
 
-                    <h3>
-                        Apoyo a la capilla
-                    </h3>
+                    <div class="proyecto-contenido">
 
-                    <p>
-                        Colaboramos con mejoras y necesidades
-                        de nuestra capilla.
-                    </p>
+                        <span class="proyecto-numero">
+                            02
+                        </span>
 
-                    <button
-                        class="btn-link"
-                        onclick="mostrarProyecto('capilla')">
+                        <h3>
+                            Apoyo a la capilla
+                        </h3>
 
-                        Ver proyecto →
+                        <p>
 
-                    </button>
+                            Colaboramos con las necesidades
+                            y mejoras de un espacio importante
+                            para nuestra comunidad.
+
+                        </p>
+
+                    </div>
 
                 </article>
 
 
+                <article class="proyecto-card">
 
-                <article class="tarjeta">
+                    <div class="proyecto-imagen">
 
-                    <div class="tarjeta-icono">
-                        🏫
+                        <img
+                            src="fondo4.jpeg"
+                            alt="Apoyo a la escuela">
+
                     </div>
 
-                    <h3>
-                        Apoyo a la escuela
-                    </h3>
+                    <div class="proyecto-contenido">
 
-                    <p>
-                        Apoyamos proyectos que contribuyen a
-                        mejorar las condiciones educativas.
-                    </p>
+                        <span class="proyecto-numero">
+                            03
+                        </span>
 
-                    <button
-                        class="btn-link"
-                        onclick="mostrarProyecto('escuela')">
+                        <h3>
+                            Apoyo a la escuela
+                        </h3>
 
-                        Ver proyecto →
+                        <p>
 
-                    </button>
+                            Contribuimos con iniciativas
+                            destinadas a apoyar las necesidades
+                            educativas.
+
+                        </p>
+
+                    </div>
 
                 </article>
 
 
+                <article class="proyecto-card">
 
-                <article class="tarjeta">
+                    <div class="proyecto-imagen">
 
-                    <div class="tarjeta-icono">
-                        ⚽
+                        <img
+                            src="fondo5.jpeg"
+                            alt="Mejoramiento del campo">
+
                     </div>
 
-                    <h3>
-                        Mejoramiento del campo
-                    </h3>
+                    <div class="proyecto-contenido">
 
-                    <p>
-                        Participamos en iniciativas para mejorar
-                        los espacios deportivos de La Paterna.
-                    </p>
+                        <span class="proyecto-numero">
+                            04
+                        </span>
 
-                    <button
-                        class="btn-link"
-                        onclick="mostrarProyecto('campo')">
+                        <h3>
+                            Mejoramiento del campo
+                        </h3>
 
-                        Ver proyecto →
+                        <p>
 
-                    </button>
+                            Apoyamos la mejora de espacios
+                            deportivos para fomentar la
+                            convivencia.
+
+                        </p>
+
+                    </div>
 
                 </article>
-
 
             </div>
 
@@ -561,92 +471,103 @@
     </section>
 
 
-
-    <!-- =========================================
+    <!-- =========================
          APOYO SOCIAL
-    ========================================== -->
+    ========================== -->
 
-    <section class="apoyo seccion">
+    <section class="seccion apoyo">
 
-        <div class="contenedor">
+        <div class="contenedor apoyo-contenido">
 
+            <div class="apoyo-texto">
 
-            <div class="titulo-seccion centrado">
-
-                <span class="mini-titulo">
+                <span class="etiqueta-seccion">
                     APOYO SOCIAL
                 </span>
 
                 <h2>
-                    Estamos para nuestra gente
+
+                    Siempre estamos
+                    <span>para nuestra gente</span>
+
                 </h2>
 
                 <p>
-                    También acompañamos a las familias de
-                    nuestra comunidad en momentos importantes
-                    y difíciles.
+
+                    Nuestra unión también se refleja
+                    cuando una familia atraviesa un
+                    momento difícil.
+
+                </p>
+
+                <p>
+
+                    Buscamos acompañar y brindar apoyo
+                    en situaciones de necesidad, enfermedad
+                    o pérdida de un ser querido.
+
                 </p>
 
             </div>
 
 
-            <div class="apoyo-grid">
-
+            <div class="apoyo-lista">
 
                 <div class="apoyo-item">
 
-                    <span>
-                        ❤️
-                    </span>
+                    <span>❤️</span>
 
-                    <h3>
-                        Apoyo a familias
-                    </h3>
+                    <div>
 
-                    <p>
-                        Brindamos ayuda cuando una familia
-                        enfrenta una situación que requiere
-                        solidaridad.
-                    </p>
+                        <h3>
+                            Apoyo a familias
+                        </h3>
+
+                        <p>
+                            Ayuda en momentos de necesidad.
+                        </p>
+
+                    </div>
 
                 </div>
 
 
                 <div class="apoyo-item">
 
-                    <span>
-                        🕊️
-                    </span>
+                    <span>🕊️</span>
 
-                    <h3>
-                        Momentos de pérdida
-                    </h3>
+                    <div>
 
-                    <p>
-                        Acompañamos y apoyamos a las familias
-                        ante la pérdida de un ser querido.
-                    </p>
+                        <h3>
+                            Momentos de pérdida
+                        </h3>
+
+                        <p>
+                            Acompañamos a las familias.
+                        </p>
+
+                    </div>
 
                 </div>
 
 
                 <div class="apoyo-item">
 
-                    <span>
-                        🤲
-                    </span>
+                    <span>🤲</span>
 
-                    <h3>
-                        Situaciones de necesidad
-                    </h3>
+                    <div>
 
-                    <p>
-                        Buscamos ayudar a las personas que
-                        atraviesan momentos difíciles.
-                    </p>
+                        <h3>
+                            Solidaridad
+                        </h3>
+
+                        <p>
+                            Unidos cuando más se necesita.
+                        </p>
+
+                    </div>
 
                 </div>
-
 
             </div>
 
@@ -655,46 +576,47 @@
     </section>
 
 
-
-    <!-- =========================================
+    <!-- =========================
          ACTIVIDADES
-    ========================================== -->
+    ========================== -->
 
     <section
-        class="actividades seccion"
+        class="seccion actividades"
         id="actividades">
 
         <div class="contenedor">
 
+            <div class="encabezado-seccion">
 
-            <div class="titulo-seccion centrado">
-
-                <span class="mini-titulo">
+                <span class="etiqueta-seccion">
                     ACTIVIDADES
                 </span>
 
                 <h2>
-                    Celebramos y compartimos
+                    Compartimos como
+                    <span>comunidad</span>
                 </h2>
 
                 <p>
-                    La unión también se fortalece compartiendo
-                    momentos especiales.
+
+                    También celebramos y creamos momentos
+                    para mantener viva nuestra unión.
+
                 </p>
 
             </div>
 
 
-            <div class="actividad-grid">
+            <div class="actividades-grid">
 
 
-                <article class="actividad-card">
+                <article class="actividad">
 
                     <img
                         src="fondo3.jpg"
-                        alt="Actividad del Día de la Madre">
+                        alt="Día de la Madre">
 
-                    <div class="actividad-contenido">
+                    <div class="actividad-info">
 
                         <span>
                             Celebración
@@ -704,24 +626,18 @@
                             Día de la Madre
                         </h3>
 
-                        <p>
-                            Celebramos y reconocemos a las madres
-                            de nuestra comunidad.
-                        </p>
-
                     </div>
 
                 </article>
 
 
-
-                <article class="actividad-card">
+                <article class="actividad">
 
                     <img
                         src="fondo2.jpg"
                         alt="Actividad deportiva">
 
-                    <div class="actividad-contenido">
+                    <div class="actividad-info">
 
                         <span>
                             Deporte
@@ -731,24 +647,18 @@
                             Actividades deportivas
                         </h3>
 
-                        <p>
-                            Promovemos actividades deportivas y
-                            espacios para compartir como comunidad.
-                        </p>
-
                     </div>
 
                 </article>
 
 
-
-                <article class="actividad-card">
+                <article class="actividad">
 
                     <img
                         src="fondo5.jpeg"
-                        alt="Comunidad de La Paterna">
+                        alt="Actividad comunitaria">
 
-                    <div class="actividad-contenido">
+                    <div class="actividad-info">
 
                         <span>
                             Comunidad
@@ -758,15 +668,9 @@
                             Unidos por nuestra gente
                         </h3>
 
-                        <p>
-                            Creamos espacios para convivir y
-                            fortalecer los lazos entre nuestra gente.
-                        </p>
-
                     </div>
 
                 </article>
-
 
             </div>
 
@@ -775,31 +679,72 @@
     </section>
 
 
+    <!-- =========================
+         MENSAJE
+    ========================== -->
 
-    <!-- =========================================
+    <section class="mensaje">
+
+        <div class="mensaje-overlay"></div>
+
+        <div class="contenedor mensaje-contenido">
+
+            <span>
+                NUESTRO COMPROMISO
+            </span>
+
+            <h2>
+                Estar lejos no significa
+                estar ausentes.
+            </h2>
+
+            <p>
+
+                Seguimos unidos a nuestra tierra,
+                apoyando a nuestra gente y construyendo
+                juntos un mejor futuro para La Paterna.
+
+            </p>
+
+            <a
+                href="#contacto"
+                class="btn btn-verde">
+
+                Sé parte de nuestra comunidad
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
          GALERÍA
-    ========================================== -->
+    ========================== -->
 
     <section
-        class="galeria seccion"
+        class="seccion galeria"
         id="galeria">
 
         <div class="contenedor">
 
+            <div class="encabezado-seccion centrado">
 
-            <div class="titulo-seccion centrado">
-
-                <span class="mini-titulo">
+                <span class="etiqueta-seccion">
                     GALERÍA
                 </span>
 
                 <h2>
-                    Momentos que nos unen
+                    Momentos que nos
+                    <span>unen</span>
                 </h2>
 
                 <p>
-                    Algunos momentos y espacios que forman
-                    parte de nuestra comunidad.
+
+                    Imágenes de nuestra comunidad,
+                    proyectos y actividades.
+
                 </p>
 
             </div>
@@ -809,7 +754,7 @@
 
 
                 <div
-                    class="foto"
+                    class="galeria-foto grande"
                     onclick="abrirImagen('fondo.jpg')">
 
                     <img
@@ -820,7 +765,7 @@
 
 
                 <div
-                    class="foto"
+                    class="galeria-foto"
                     onclick="abrirImagen('fondo2.jpg')">
 
                     <img
@@ -831,7 +776,7 @@
 
 
                 <div
-                    class="foto"
+                    class="galeria-foto"
                     onclick="abrirImagen('fondo3.jpg')">
 
                     <img
@@ -842,27 +787,26 @@
 
 
                 <div
-                    class="foto"
+                    class="galeria-foto"
                     onclick="abrirImagen('fondo4.jpeg')">
 
                     <img
                         src="fondo4.jpeg"
-                        alt="La Paterna">
+                        alt="Proyecto">
 
                 </div>
 
 
                 <div
-                    class="foto"
+                    class="galeria-foto"
                     onclick="abrirImagen('fondo5.jpeg')">
 
                     <img
                         src="fondo5.jpeg"
-                        alt="Actividad comunitaria">
+                        alt="Comunidad">
 
                 </div>
 
-
             </div>
 
         </div>
@@ -870,277 +814,182 @@
     </section>
 
 
+    <!-- =========================
+         CONTACTO
+    ========================== -->
 
-    <!-- =========================================
-         CTA
-    ========================================== -->
+    <section
+        class="seccion contacto"
+        id="contacto">
 
-    <section class="cta">
-
-        <div class="contenedor cta-contenido">
-
+        <div class="contenedor contacto-grid">
 
             <div>
 
-                <span class="mini-titulo">
-                    NUESTRO COMPROMISO
-                </span>
-
-                <h2>
-                    Sigamos construyendo comunidad
-                </h2>
-
-                <p>
-                    Porque estar lejos no significa estar
-                    ausentes. Seguimos trabajando por La Paterna.
-                </p>
-
-            </div>
-
-
-            <a
-                href="#contacto"
-                class="btn btn-blanco">
-
-                Contáctanos
-
-            </a>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================
-         CONTACTO
-    ========================================== -->
-
-    <section
-        class="contacto seccion"
-        id="contacto">
-
-        <div class="contenedor">
-
-
-            <div class="titulo-seccion centrado">
-
-                <span class="mini-titulo">
+                <span class="etiqueta-seccion">
                     CONTACTO
                 </span>
 
                 <h2>
-                    Unidos por La Paterna
+
+                    Sigamos unidos por
+                    <span>La Paterna</span>
+
                 </h2>
 
                 <p>
+
                     Si deseas comunicarte con nosotros,
-                    puedes enviarnos un mensaje.
+                    escríbenos. Será un gusto escucharte.
+
                 </p>
+
+
+                <div class="contacto-datos">
+
+                    <div>
+
+                        <strong>
+                            📍 Comunidad
+                        </strong>
+
+                        <span>
+                            La Paterna
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            🇺🇸 Grupo de apoyo
+                        </strong>
+
+                        <span>
+                            Estados Unidos
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            🤝 Compromiso
+                        </strong>
+
+                        <span>
+                            Unidos por nuestra comunidad
+                        </span>
+
+                    </div>
+
+                </div>
 
             </div>
 
 
-            <div class="contacto-grid">
+            <form
+                class="formulario"
+                id="formulario">
 
+                <div class="campo">
 
-                <div class="contacto-info">
+                    <label for="nombre">
+                        Nombre
+                    </label>
 
-
-                    <div class="contacto-item">
-
-                        <span>
-                            📍
-                        </span>
-
-                        <div>
-
-                            <h3>
-                                Nuestra comunidad
-                            </h3>
-
-                            <p>
-                                La Paterna
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="contacto-item">
-
-                        <span>
-                            🇺🇸
-                        </span>
-
-                        <div>
-
-                            <h3>
-                                Grupo en Estados Unidos
-                            </h3>
-
-                            <p>
-                                Paterneños unidos desde Estados Unidos
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="contacto-item">
-
-                        <span>
-                            🤝
-                        </span>
-
-                        <div>
-
-                            <h3>
-                                Nuestro compromiso
-                            </h3>
-
-                            <p>
-                                Apoyar y trabajar por nuestra comunidad.
-                            </p>
-
-                        </div>
-
-                    </div>
-
+                    <input
+                        type="text"
+                        id="nombre"
+                        placeholder="Tu nombre"
+                        required>
 
                 </div>
 
 
+                <div class="campo">
 
-                <form
-                    class="formulario"
-                    id="formulario">
+                    <label for="correo">
+                        Correo electrónico
+                    </label>
 
+                    <input
+                        type="email"
+                        id="correo"
+                        placeholder="tu@email.com"
+                        required>
 
-                    <div class="campo">
-
-                        <label for="nombre">
-                            Nombre
-                        </label>
-
-                        <input
-                            type="text"
-                            id="nombre"
-                            name="nombre"
-                            placeholder="Escribe tu nombre"
-                            required>
-
-                    </div>
+                </div>
 
 
+                <div class="campo">
 
-                    <div class="campo">
+                    <label for="mensaje">
+                        Mensaje
+                    </label>
 
-                        <label for="correo">
-                            Correo electrónico
-                        </label>
+                    <textarea
+                        id="mensaje"
+                        rows="5"
+                        placeholder="Escribe tu mensaje..."
+                        required></textarea>
 
-                        <input
-                            type="email"
-                            id="correo"
-                            name="correo"
-                            placeholder="correo@ejemplo.com"
-                            required>
-
-                    </div>
+                </div>
 
 
+                <button
+                    type="submit"
+                    class="btn btn-verde">
 
-                    <div class="campo">
+                    Enviar mensaje
 
-                        <label for="mensaje">
-                            Mensaje
-                        </label>
+                </button>
 
-                        <textarea
-                            id="mensaje"
-                            name="mensaje"
-                            rows="6"
-                            placeholder="Escribe tu mensaje..."
-                            required></textarea>
-
-                    </div>
-
-
-
-                    <button
-                        type="submit"
-                        class="btn btn-principal">
-
-                        Enviar mensaje
-
-                    </button>
-
-
-                </form>
-
-
-            </div>
+            </form>
 
         </div>
 
     </section>
 
 
-
-    <!-- =========================================
+    <!-- =========================
          FOOTER
-    ========================================== -->
+    ========================== -->
 
     <footer class="footer">
 
         <div class="contenedor footer-contenido">
 
-
             <div>
 
                 <img
-                    src="logo.png"
+                    src="img/logo.png"
                     alt="Unidos por La Paterna"
                     class="footer-logo">
 
                 <p>
-                    Unidos por nuestra comunidad.
+                    Nuestra gente. Nuestra tierra.
+                    Nuestro compromiso.
                 </p>
 
             </div>
 
 
-            <div class="footer-links">
+            <div class="footer-menu">
 
-                <a href="#inicio">
-                    Inicio
-                </a>
+                <a href="#inicio">Inicio</a>
 
-                <a href="#quienes-somos">
-                    Quiénes somos
-                </a>
+                <a href="#quienes">Quiénes somos</a>
 
-                <a href="#proyectos">
-                    Proyectos
-                </a>
+                <a href="#proyectos">Proyectos</a>
 
-                <a href="#actividades">
-                    Actividades
-                </a>
+                <a href="#actividades">Actividades</a>
 
-                <a href="#galeria">
-                    Galería
-                </a>
+                <a href="#galeria">Galería</a>
 
-                <a href="#contacto">
-                    Contacto
-                </a>
+                <a href="#contacto">Contacto</a>
 
             </div>
 
@@ -1163,52 +1012,13 @@
     </footer>
 
 
-
-    <!-- =========================================
-         MODAL PROYECTOS
-    ========================================== -->
-
-    <div
-        class="modal"
-        id="modalProyecto">
-
-
-        <div class="modal-contenido">
-
-
-            <button
-                class="cerrar-modal"
-                onclick="cerrarModal()">
-
-                ×
-
-            </button>
-
-
-            <h2 id="modalTitulo">
-                Proyecto
-            </h2>
-
-
-            <p id="modalTexto">
-                Información del proyecto.
-            </p>
-
-
-        </div>
-
-    </div>
-
-
-
-    <!-- =========================================
-         VISOR DE IMÁGENES
-    ========================================== -->
+    <!-- =========================
+         VISOR DE IMAGEN
+    ========================== -->
 
     <div
         class="visor"
-        id="visorImagen">
-
+        id="visor">
 
         <button
             class="cerrar-visor"
@@ -1218,21 +1028,15 @@
 
         </button>
 
-
         <img
             id="imagenGrande"
             src=""
             alt="Imagen ampliada">
 
-
     </div>
 
 
-
-    <!-- JAVASCRIPT -->
-
     <script src="js/script.js"></script>
-
 
 </body>
 
